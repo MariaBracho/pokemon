@@ -1,0 +1,7 @@
+{
+    "cSpell.words": [],
+    "editor.formatOnSave": true,
+    "files.associations": {
+      "*.css": "tailwindcss"
+    }
+  }
