@@ -22,8 +22,11 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className={roboto.className}>
-        <TanstackQueryProvider>{children}</TanstackQueryProvider>
+      <body className={`${roboto.className} mytheme pb-7 `}>
+        <TanstackQueryProvider>
+          <div className="h-2 w-full bg-rainbow" />
+          <div className="px-4">{children}</div>
+        </TanstackQueryProvider>
       </body>
     </html>
   );

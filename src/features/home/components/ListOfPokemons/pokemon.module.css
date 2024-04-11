@@ -1,0 +1,21 @@
+.listOfPokemons {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+  grid-template-rows: 256px;
+}
+
+@media (max-width: 640px) {
+  .listOfPokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.linearGradientText {
+  background-image: linear-gradient(
+    96deg,
+    #1c1c1c -9.54%,
+    #fff 49.6%,
+    #303030 105.26%
+  );
+}
