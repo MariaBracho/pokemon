@@ -1,8 +1,10 @@
 'use client';
 
-import { useGetPokemons } from '../queries/pokemonQueries';
-import PokemonCard from './PokemonCard';
 import cls from 'classnames';
+
+import { useGetPokemons } from '@/features/home/queries/pokemonQueries';
+
+import PokemonCard from './PokemonCard';
 
 import style from './pokemon.module.css';
 
