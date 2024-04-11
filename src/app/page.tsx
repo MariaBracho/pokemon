@@ -1,9 +1,10 @@
+import ListOfPokemons from '@/features/home/components/ListOfPokemons';
+
 export default function Home() {
   return (
-    <main>
-      <div>
-        <p>Pokemon App</p>
-      </div>
-    </main>
+    <div>
+      <p>Pokemon App</p>
+      <ListOfPokemons />
+    </div>
   );
 }
