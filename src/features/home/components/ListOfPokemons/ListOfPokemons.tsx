@@ -10,6 +10,7 @@ import Pagination from '@/components/table/Pagination';
 import PokemonsCards from './PokemonsCards';
 import SinglePokemon from './SinglePokemon';
 import { getMaxPage } from '@/utils/getMaxPage';
+import { Suspense } from 'react';
 
 export default function ListOfPokemons({
   search,
@@ -49,7 +50,9 @@ export default function ListOfPokemons({
             data-show={!!search}
             className="md:hidden data-[show=true]:hidden"
           >
-            <Pagination maxPage={maxPage} />
+            <Suspense>
+              <Pagination maxPage={maxPage} />
+            </Suspense>
           </div>
         </div>
         {!search ? (

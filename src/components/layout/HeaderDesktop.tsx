@@ -6,6 +6,7 @@ import Menu from '@/components/layout/Menu';
 import SwapButton from '@/components/layout/SwapButton';
 
 import { useToggle } from 'usehooks-ts';
+import { Suspense } from 'react';
 
 export default function Header() {
   const [value, toggle] = useToggle();
@@ -24,7 +25,9 @@ export default function Header() {
           />
         </div>
         <div className="w-full h-full flex">
-          <SeacrhInput />
+          <Suspense>
+            <SeacrhInput />
+          </Suspense>
         </div>
         <div className="z-40 relative w-full hidden md:flex justify-end ">
           <SwapButton isToggle={value} onToggle={toggle} />

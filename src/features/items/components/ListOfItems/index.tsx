@@ -11,6 +11,7 @@ import {
 
 import ItemsCards from './ItemsCards';
 import SingleItemCard from './SingleItemCard';
+import { Suspense } from 'react';
 
 export default function ListOfItems({
   search,
@@ -50,7 +51,9 @@ export default function ListOfItems({
             data-show={!!search}
             className="md:hidden data-[show=true]:hidden"
           >
-            <Pagination maxPage={maxPage} />
+            <Suspense>
+              <Pagination maxPage={maxPage} />
+            </Suspense>
           </div>
         </div>
         {!search ? (

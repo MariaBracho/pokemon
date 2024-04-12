@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import SearchIcon from '../icons/SearchIcon';
+import SearchIcon from '@/components/icons/SearchIcon';
 
 export default function SeacrhInput() {
   const searchParams = useSearchParams();
