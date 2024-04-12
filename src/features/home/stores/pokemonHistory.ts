@@ -15,14 +15,14 @@ const usePokemonHistoryStore = create(
     (set) => ({
       pokemonHistory: [],
       setPokemonHistory: (pokemonId: number) => {
-        set(({ pokemonHistory }) => {
-          const havePokemonId = pokemonHistory.includes(pokemonId);
+        set((state) => {
+          const havePokemonId = state.pokemonHistory.includes(pokemonId);
           if (!havePokemonId) {
             return {
-              pokemonHistory: [...pokemonHistory, pokemonId],
+              pokemonHistory: [...state.pokemonHistory, pokemonId],
             };
           }
-          return { pokemonHistory };
+          return { pokemonHistory: state.pokemonHistory };
         });
       },
     }),
