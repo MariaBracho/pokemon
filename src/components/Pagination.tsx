@@ -40,7 +40,7 @@ export default function Pagination({ maxPage }: { maxPage: number }) {
       <button
         onClick={prevPage}
         disabled={isLastPageDisabled}
-        className="disabled:cursor-not-allowed"
+        className="disabled:cursor-not-allowed outline-none"
       >
         <ArrowIcon />
       </button>
@@ -50,7 +50,7 @@ export default function Pagination({ maxPage }: { maxPage: number }) {
         <p>{maxPage}</p>
       </div>
       <button
-        className="rotate-180  disabled:cursor-not-allowed"
+        className="rotate-180  disabled:cursor-not-allowed outline-none"
         onClick={nextPage}
         disabled={isNextPageDisbled}
       >

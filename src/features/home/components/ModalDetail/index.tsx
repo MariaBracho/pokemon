@@ -13,7 +13,7 @@ export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
         <div className="relative modal-box px-4 pt-4 pb-5 min-h-screen md:min-h-[668px] rounded-none w-full md:max-h-[668px] md:max-w-[590px] md:rounded-2xl  md:border border-[#474747] ">
           <div className="modal-action m-0 absolute z-20 w-full justify-end right-8 top-6">
             <form method="dialog">
-              <button className="flex gap-1 items-center border-none">
+              <button className="flex gap-1 items-center outline-none">
                 <p>Close (esc)</p>
                 <CloseIcon />
               </button>

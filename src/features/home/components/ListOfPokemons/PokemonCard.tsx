@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { PokemonType } from '@/models/pokemonType';
 import { ModalDetail } from '@/features/home/components/ModalDetail';
 import type { Pokemon } from '@/models/pokemon';
+import usePokemonHistoryStore from '@/features/home/stores/pokemonHistory';
 
 export interface PokemonCardProps extends Pokemon {
   image: string;
@@ -20,11 +21,20 @@ export default function PokemonCard({
 }: PokemonCardProps) {
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
+  const { setPokemonHistory, pokemonHistory } = usePokemonHistoryStore();
+
   const openModal = () => {
     if (modalRef.current) {
       modalRef.current.showModal();
+      setPokemonHistory(rest.id);
     }
   };
+
+  const OPEN_POKEBALL = '/icons/open-pokeball.png';
+  const CLOSE_POKEBALL = '/icons/close-pokeball.png';
+
+  const isActiveHistory = pokemonHistory.includes(rest.id);
+  const pokeBallIconPath = isActiveHistory ? OPEN_POKEBALL : CLOSE_POKEBALL;
 
   return (
     <>
@@ -38,7 +48,8 @@ export default function PokemonCard({
       />
       <div
         onClick={openModal}
-        className="hover:scale-105 transition-all cursor-pointer min-h-64  w-[160px] md:w-[183px] mt-5 md:mt-3  rounded-xl bg-[#020202] flex flex-col items-center p-1 border border-[#474747] "
+        data-activehistory={isActiveHistory}
+        className="hover:scale-105 transition-all cursor-pointer min-h-64  w-[160px] md:w-[183px] mt-5 md:mt-3  rounded-xl data-[activehistory=true]:bg-white/90  bg-[#020202] flex flex-col items-center p-1 border border-[#474747] "
       >
         <div className="relative w-full h-[207px] rounded-lg overflow-hidden flex flex-col items-center ">
           <Image
@@ -80,9 +91,18 @@ export default function PokemonCard({
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center mt-2">
-          <div className="w-36">
+        <div className="w-full flex justify-between mt-2">
+          <div className="w-full">
             <p className="text-sm gradient-text">{name}</p>
+          </div>
+          <div>
+            <Image
+              src={pokeBallIconPath}
+              alt="pokeball"
+              width={32}
+              height={32}
+              className="w-auto h-auto"
+            />
           </div>
         </div>
       </div>
