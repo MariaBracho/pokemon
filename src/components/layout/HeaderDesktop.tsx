@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <Menu isOpen={value} onCloseModal={toggle}>
-      <div className="min-h-20 w-full grid grid-cols-1 md:grid-cols-[1fr,2fr,1fr] items-center justify-center md:px-6">
+      <div className="min-h-20 w-full grid grid-cols-1 md:grid-cols-[1fr,2fr,1fr] items-center justify-center px-2 md:px-6">
         <div className="hidden md:block">
           <Image
             src="/images/pokemonLogo.png"

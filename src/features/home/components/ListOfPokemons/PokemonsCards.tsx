@@ -1,9 +1,10 @@
 import type { Pokemon } from '@/models/pokemon';
+import SkeletonCard from '@/features/home/components/skeletons/SkeletonCard';
+import { generateArray } from '@/utils/generateArray';
 import PokemonCard from './PokemonCard';
 import cls from 'classnames';
-import style from './pokemon.module.css';
-import SkeletonCard from './SkeletonCard';
-import { generateArray } from '@/utils/generateArray';
+
+import style from './pokemonGalleryGrid.module.css';
 
 interface Props {
   isLoading: boolean;
@@ -13,7 +14,9 @@ interface Props {
 export default function PokemonsCards({ isLoading, pokemons }: Props) {
   const skeletonList = generateArray(15);
   return (
-    <div className={cls(style.listOfPokemons, 'gap-2 md:gap-3 mt-5 md:mt-3')}>
+    <div
+      className={cls(style.pokemonGalleryGrid, 'gap-2 md:gap-3 mt-5 md:mt-3')}
+    >
       {pokemons && !isLoading
         ? pokemons.map(({ id, name, sprites, types, stats, ...rest }) => (
             <PokemonCard
@@ -25,6 +28,7 @@ export default function PokemonsCards({ isLoading, pokemons }: Props) {
               stats={stats}
               sprites={sprites}
               id={id}
+              baseExperience={rest.base_experience}
               {...rest}
             />
           ))

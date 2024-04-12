@@ -1,0 +1,13 @@
+.itemsGalleryGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  grid-auto-rows: max-content;
+  justify-items: center;
+}
+
+@media (max-width: 640px) {
+  .itemsGalleryGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,7 +1,7 @@
 import type { Pokemon } from '@/models/pokemon';
+import SkeletonCard from '@/features/home/components/skeletons/SkeletonCard';
+import NotResultsFound from '@/components/NotResultsFound';
 import PokemonCard from './PokemonCard';
-import SkeletonCard from './SkeletonCard';
-import NotFoundPokemon from './NotFoundPokemon';
 
 interface Props {
   pokemon: Pokemon | undefined;
@@ -17,7 +17,9 @@ export default function SinglePokemon({
   pokemonName,
 }: Props) {
   if (isError && !pokemon) {
-    return <NotFoundPokemon pokemonName={pokemonName} />;
+    return (
+      <NotResultsFound search={pokemonName} searchName="pokemon" path="/home" />
+    );
   }
   return (
     <div className="w-full mt-5 md:mt-3">
@@ -25,6 +27,7 @@ export default function SinglePokemon({
         pokemon && (
           <PokemonCard
             {...pokemon}
+            baseExperience={pokemon.base_experience}
             name={pokemon.name}
             types={pokemon.types}
             image={pokemon.sprites.other.home.front_shiny}
