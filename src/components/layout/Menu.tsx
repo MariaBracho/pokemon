@@ -10,7 +10,12 @@ interface Props {
 export default function Menu({ children, isOpen, onCloseModal }: Props) {
   return (
     <div className="drawer drawer-end">
-      <input type="checkbox" className="drawer-toggle" checked={isOpen} />
+      <input
+        type="checkbox"
+        className="drawer-toggle"
+        checked={isOpen}
+        readOnly
+      />
       <div className="drawer-content">{children}</div>
       <div className="drawer-side z-30">
         <label

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import SearchIcon from '../icons/SearchIcon';
+import SearchIcon from '@/components/icons/SearchIcon';
 
 export default function SeacrhInput() {
   const searchParams = useSearchParams();
@@ -49,7 +49,7 @@ export default function SeacrhInput() {
           <input
             type="text"
             value={search}
-            placeholder="Search pokemon"
+            placeholder="Search"
             className="grow"
             onChange={updateValue}
           />
@@ -59,7 +59,7 @@ export default function SeacrhInput() {
         type="submit"
         className="btn btn-primary btn-sm w-full md:max-w-48"
       >
-        Search Pokemon
+        Search by name
       </button>
     </form>
   );

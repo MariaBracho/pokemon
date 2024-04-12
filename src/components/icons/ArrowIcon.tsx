@@ -29,4 +29,5 @@ const ArrowIcon = (props: SVGProps<SVGSVGElement>) => (
     </g>
   </svg>
 );
+
 export default ArrowIcon;

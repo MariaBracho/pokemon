@@ -10,7 +10,7 @@ export default function SwapButton({
 }) {
   return (
     <div className="swap swap-rotate drawer-button text-9xl" onClick={onToggle}>
-      <input type="checkbox" checked={isToggle} />
+      <input type="checkbox" checked={isToggle} readOnly />
 
       <div className="swap-off">
         <MenuIcon />

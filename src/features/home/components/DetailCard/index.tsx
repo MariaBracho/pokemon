@@ -1,24 +1,20 @@
-import Image from 'next/image';
-import { forwardRef } from 'react';
 import type { PokemonCardProps } from '@/features/home/components/ListOfPokemons/PokemonCard';
-import CloseIcon from '@/components/icons/CloseIcons';
+import DetailModal from '@/components/modals/DetailModal';
+import React from 'react';
+import Image from 'next/image';
 
 interface Props extends PokemonCardProps {
-  ref: React.Ref<null>;
+  ref: React.Ref<HTMLDialogElement>;
 }
-export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
+
+const DetailCard = React.forwardRef<HTMLDialogElement, Props>(
   function (props, ref) {
+    const { name, types, order, height, weight, baseExperience, cries, stats } =
+      props;
+
     return (
-      <dialog ref={ref} className="modal">
-        <div className="relative modal-box px-4 pt-4 pb-5 min-h-screen md:min-h-[668px] rounded-none w-full md:max-h-[668px] md:max-w-[590px] md:rounded-2xl  md:border border-[#474747] ">
-          <div className="modal-action m-0 absolute z-20 w-full justify-end right-8 top-6">
-            <form method="dialog">
-              <button className="flex gap-1 items-center outline-none">
-                <p>Close (esc)</p>
-                <CloseIcon />
-              </button>
-            </form>
-          </div>
+      <DetailModal ref={ref}>
+        <div className="w-full h-full">
           <div className="w-full h-[245px] rounded-2xl relative overflow-hidden">
             <Image
               src="/images/galaxy-modal-background.png"
@@ -36,10 +32,10 @@ export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
           </div>
           <div className="w-full mt-4 flex items-center gap-2">
             <div>
-              <p className="gradient-text text-2xl capitalize">{props.name}</p>
+              <p className="gradient-text text-2xl capitalize">{name}</p>
             </div>
             <div className="flex gap-2 flex-wrap">
-              {props.types.map((type) => {
+              {types.map((type) => {
                 return (
                   <div
                     key={type.type.name}
@@ -54,24 +50,20 @@ export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
           <div className="mt-5 w-full h-full grid grid-cols-1 md:grid-cols-[1fr,2fr] gap-3">
             <div className="bg-white/5 rounded-2xl w-full p-4 h-min">
               <ul className="text-white/75 flex flex-col gap-y-2 text-sm">
-                <li>Order : {props.order}</li>
-                <li>Height : {props.height}cm</li>
-                <li>Weight : {props.weight}</li>
-                <li>Base experience : {props.base_experience}</li>
+                <li>Order : {order}</li>
+                <li>Height : {height}cm</li>
+                <li>Weight : {weight}</li>
+                <li>Base experience : {baseExperience}</li>
                 <li className="w-full">
-                  <audio
-                    src={props.cries?.latest}
-                    controls
-                    className="h-8 w-full"
-                  />
+                  <audio src={cries?.latest} controls className="h-8 w-full" />
                 </li>
               </ul>
             </div>
             <div className="bg-white/5 h-full rounded-2xl w-full">
-              <div className="p-4">
+              <div className="p-2 w-full">
                 <p className="text-base font-bold">Stats</p>
                 <div className="w-full text-xs md:text-sm flex flex-col gap-y-1">
-                  {props?.stats?.map((stat) => {
+                  {stats?.map((stat) => {
                     return (
                       <div
                         key={stat.stat.name}
@@ -96,12 +88,11 @@ export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
             </div>
           </div>
         </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
+      </DetailModal>
     );
   },
 );
 
-ModalDetail.displayName = 'ModalDetail';
+DetailCard.displayName = 'DetailCard';
+
+export default DetailCard;

@@ -5,14 +5,6 @@ export const NAVIGATION_ROUTER = [
   },
   {
     label: 'Items',
-    path: '/',
-  },
-  {
-    label: 'Barries',
-    path: '/',
-  },
-  {
-    label: 'Locations',
-    path: '/',
+    path: '/items',
   },
 ];

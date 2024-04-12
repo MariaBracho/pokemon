@@ -10,7 +10,7 @@ export default function HeaderMobile() {
 
   return (
     <Menu isOpen={value} onCloseModal={toggle}>
-      <div className="h-20 flex justify-between items-center md:hidden ">
+      <div className="p-2 h-20 flex justify-between items-center md:hidden ">
         <Image
           src="/images/pokemonLogo.png"
           alt="logo"

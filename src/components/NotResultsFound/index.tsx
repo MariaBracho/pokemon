@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function NotFoundPokemon({
-  pokemonName = '',
+export default function NotResultsFound({
+  search = '',
+  path = '/',
+  searchName = '',
 }: {
-  pokemonName: string;
+  search: string;
+  path: string;
+  searchName: string;
 }) {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-20">
@@ -16,10 +20,10 @@ export default function NotFoundPokemon({
           height={106}
         />
         <p className="font-extrabold text-xl">
-          “{pokemonName.toLocaleUpperCase()}” pokemon not found
+          <span className="uppercase">“{search}”</span> {searchName} not found
         </p>
-        <p>Try typing another pokemon name or explore the beginning</p>
-        <Link href="/" replace={true} className="underline cursor-pointer">
+        <p>Try typing another {searchName} name or explore the beginning</p>
+        <Link href={path} replace={true} className="underline cursor-pointer">
           Go to the beginning of my search
         </Link>
       </div>
