@@ -38,7 +38,7 @@ export default function PokemonCard({
       />
       <div
         onClick={openModal}
-        className="hover:scale-105 transition-all cursor-pointer w-[160px] mt-5 md:mt-3 md:w-[183px] min-h-64 rounded-xl bg-[#020202] flex flex-col items-center p-1 border border-[#474747] "
+        className="hover:scale-105 transition-all cursor-pointer min-h-64  w-[160px] md:w-[183px] mt-5 md:mt-3  rounded-xl bg-[#020202] flex flex-col items-center p-1 border border-[#474747] "
       >
         <div className="relative w-full h-[207px] rounded-lg overflow-hidden flex flex-col items-center ">
           <Image
@@ -46,7 +46,7 @@ export default function PokemonCard({
             alt="galaxy"
             height={207}
             width={160}
-            className="w-full h-[207px] absolute"
+            className="w-auto h-auto absolute object-cover -top-[24%]"
           />
           <div className="relative z-10 w-full flex flex-col justify-center items-center flex-1 ">
             <div className="w-full flex items-center justify-between p-1">

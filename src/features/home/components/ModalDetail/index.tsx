@@ -23,8 +23,7 @@ export const ModalDetail = forwardRef<HTMLDialogElement, Props>(
             <Image
               src="/images/galaxy-modal-background.png"
               alt="galaxy background"
-              width={558}
-              height={245}
+              fill
               className="object-cover w-full h-full absolute"
             />
             <Image
