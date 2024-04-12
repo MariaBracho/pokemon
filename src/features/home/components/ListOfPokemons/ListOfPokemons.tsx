@@ -7,7 +7,7 @@ import {
 
 import PokemonsCards from './PokemonsCards';
 import SinglePokemon from './SinglePokemon';
-import Pagination from '@/components/Pagination';
+import Pagination from '@/components/table/Pagination';
 
 export default function ListOfPokemons({
   search,

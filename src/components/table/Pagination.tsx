@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import ArrowIcon from './icons/ArrowIcon';
+import ArrowIcon from '../icons/ArrowIcon';
 
 export default function Pagination({ maxPage }: { maxPage: number }) {
   const searchParams = useSearchParams();
