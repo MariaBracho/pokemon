@@ -14,7 +14,7 @@ export default function Header() {
           priority
           className="w-auto h-auto object-cover"
         />
-        <button>
+        <button className="outline-none">
           <MenuIcon />
         </button>
       </div>
