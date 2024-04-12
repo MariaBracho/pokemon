@@ -10,12 +10,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
-.linearGradientText {
-  background-image: linear-gradient(
-    96deg,
-    #1c1c1c -9.54%,
-    #fff 49.6%,
-    #303030 105.26%
-  );
-}

@@ -21,6 +21,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
       </head>
       <body className={`${roboto.className} mytheme pb-7 `}>
         <TanstackQueryProvider>

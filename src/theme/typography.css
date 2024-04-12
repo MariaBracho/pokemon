@@ -1,0 +1,9 @@
+.gradient-text {
+  @apply text-transparent bg-clip-text capitalize font-bold;
+  background-image: linear-gradient(
+    96deg,
+    #1c1c1c -9.54%,
+    #fff 49.6%,
+    #303030 105.26%
+  );
+}

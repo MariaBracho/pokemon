@@ -24,6 +24,7 @@ export default function SinglePokemon({
       {!isLoading ? (
         pokemon && (
           <PokemonCard
+            {...pokemon}
             name={pokemon.name}
             types={pokemon.types}
             image={pokemon.sprites.other.home.front_shiny}
