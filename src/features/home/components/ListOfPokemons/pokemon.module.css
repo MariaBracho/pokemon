@@ -4,3 +4,9 @@
   grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
   grid-template-rows: 256px;
 }
+
+@media (max-width: 640px) {
+  .listOfPokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}

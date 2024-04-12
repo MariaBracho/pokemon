@@ -1,6 +1,7 @@
 export interface PaginateProps {
   limit?: number;
   page: number;
+  search?: string;
 }
 
 export interface PaginateResponse<T> {

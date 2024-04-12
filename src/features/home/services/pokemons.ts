@@ -15,19 +15,27 @@ type URLPokemon = URLDetails;
 
 const LIMIT = 15;
 
-export const getSinglePokemon = async (pokemon: PokemonName | PokemonId) => {
+export const getSinglePokemon = async (
+  pokemon: PokemonName | PokemonId = '',
+) => {
   const { data } = await pokemonAPI.get<Pokemon>(`${POKEMON}/${pokemon}`);
   return data;
 };
 
-export const getPokemons = async ({ page, limit = LIMIT }: PaginateProps) => {
+export const getPokemons = async ({
+  page,
+  limit = LIMIT,
+  search = '',
+}: PaginateProps) => {
   const { data } = await pokemonAPI.get<PaginateResponse<URLPokemon>>(
-    `${POKEMON}?limit=${LIMIT}&offset=${page * limit}`,
+    `${POKEMON}/${search}?limit=${LIMIT}&offset=${page * limit}`,
   );
   return data;
 };
 
-export const getPokemonsWithDetails = async (paginate: PaginateProps) => {
+export const getPokemonsWithDetails = async (
+  paginate: PaginateProps,
+): Promise<PaginateResponse<Pokemon>> => {
   const pokemons = await getPokemons(paginate);
 
   const pokemonPromises = pokemons.results.map(async ({ name }) => {
@@ -35,5 +43,8 @@ export const getPokemonsWithDetails = async (paginate: PaginateProps) => {
     return singlePokemon;
   });
 
-  return await Promise.all(pokemonPromises);
+  return {
+    ...pokemons,
+    results: await Promise.all(pokemonPromises),
+  };
 };
