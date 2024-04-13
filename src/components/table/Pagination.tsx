@@ -40,18 +40,20 @@ export default function Pagination({ maxPage }: { maxPage: number }) {
   return (
     <div className="flex gap-4">
       <button
+        data-testid="prevButton"
         onClick={prevPage}
         disabled={isLastPageDisabled}
         className="disabled:cursor-not-allowed outline-none"
       >
         <ArrowIcon />
       </button>
-      <div className="flex text-white gap-1">
+      <div data-testid="page-numbers" className="flex text-white gap-1">
         <p>{currentPage}</p>
         <p>/</p>
         <p>{maxPage}</p>
       </div>
       <button
+        data-testid="nextButton"
         className="rotate-180  disabled:cursor-not-allowed outline-none"
         onClick={nextPage}
         disabled={isNextPageDisbled}
