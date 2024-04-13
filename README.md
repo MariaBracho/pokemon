@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+ <img src="public/images/pokeBall.png" alt="pokemons">
+  <br>
+  <h1>
+  Pokemons gallery
+  </h1>
+  <br>
+</div>
 
-## Getting Started
+<div>
+An interactive pokemon gallery, with details such as basic information and pokemon stats, and you can also listen to it scream
 
-First, run the development server:
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Site
+
+<table width="100%" border="0">
+<tr> 
+<td width="60%">
+ <img src="public/images/pokemon-gallery.png" alt="pokemons">
+</td>
+<td width="30%">
+ <img src="public/images/screenshot-pokemon-gallery-mobile.png" alt="pokemons">
+</td>
+</tr>
+
+</table>
+
+#### Get started
+
+Install dependencies
+
+```
+  cd pokemon
+  npm install or yard install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+or
 
-## Learn More
+```
+  yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here is a working live demo : [Demo](https://pokemon-eight-rho.vercel.app/home?page=1)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## API
 
-## Deploy on Vercel
+Pokémon API : https://pokeapi.co/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- List of pokemon cards with a short background information
+- More detailed information when clicking on a card
+- Cards highlighted with an icon to indicate that it has already been viewed
+- Drawer menu
+- Find pokemons with the search input
+- Paginated search
+- List of items
+- Responsive design
+- User-friendly design
+
+## Build with 🛠️
+
+- [Next](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [React Query](https://tanstack.com/query/latest/docs/framework/react/overview)
+- [Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Tailwind](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [husky](https://typicode.github.io/husky/get-started.html)
