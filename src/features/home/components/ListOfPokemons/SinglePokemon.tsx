@@ -1,6 +1,9 @@
-import type { Pokemon } from '@/models/pokemon';
 import SkeletonCard from '@/features/home/components/skeletons/SkeletonCard';
+
 import NotResultsFound from '@/components/NotResultsFound';
+
+import type { Pokemon } from '@/models/pokemon';
+
 import PokemonCard from './PokemonCard';
 
 interface Props {

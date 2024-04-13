@@ -26,7 +26,13 @@ export const getItems = async ({
   search = '',
 }: PaginateProps) => {
   const { data } = await pokemonAPI.get<PaginateResponse<URLItem>>(
-    `${ITEM}/${search}?limit=${LIMIT}&offset=${page * limit}`,
+    `${ITEM}/${search}`,
+    {
+      params: {
+        limit,
+        offset: page * limit,
+      },
+    },
   );
   return data;
 };

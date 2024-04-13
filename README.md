@@ -1,5 +1,5 @@
 <div align="center">
- <img src="public/images/pokeBall.png" alt="pokemons">
+ <img src="public/images/poke-Ball.png" alt="pokemons">
   <br>
   <h1>
   Pokemons gallery
@@ -32,7 +32,7 @@ Install dependencies
 
 ```
   cd pokemon
-  npm install or yard install
+  npm install or yarn install
 ```
 
 Run project

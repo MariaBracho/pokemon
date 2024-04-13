@@ -1,5 +1,7 @@
 'use client';
 
+import { Suspense } from 'react';
+
 import {
   useGetPokemons,
   useGetSinglePokemon,
@@ -7,18 +9,17 @@ import {
 
 import Pagination from '@/components/table/Pagination';
 
+import { getMaxPage } from '@/utils/getMaxPage';
+
+import type { SearchParams } from '@/models/searchParams';
+
 import PokemonsCards from './PokemonsCards';
 import SinglePokemon from './SinglePokemon';
-import { getMaxPage } from '@/utils/getMaxPage';
-import { Suspense } from 'react';
 
 export default function ListOfPokemons({
   search,
   page,
-}: {
-  search: string;
-  page: string;
-}) {
+}: SearchParams['searchParams']) {
   const pageQuery = page ? Number(page) : 1;
 
   const { data: pokemons, isLoading: isLoadingPokemons } = useGetPokemons({

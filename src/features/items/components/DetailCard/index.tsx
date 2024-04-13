@@ -7,19 +7,19 @@ interface Props {
   ref: React.Ref<HTMLDialogElement>;
 }
 
-const DetailCard = React.forwardRef<HTMLDialogElement, Props>(
-  function (props, ref) {
-    const { title, description } = props;
-    return (
-      <DetailModal ref={ref}>
-        <div className="w-full h-full">
-          <p className="gradient-text font-bold text-2xl capitalize">{title}</p>
-          <p className="text-white/75 mt-3">{description}</p>
-        </div>
-      </DetailModal>
-    );
-  },
-);
+const DetailCard = React.forwardRef<HTMLDialogElement, Props>(function (
+  { title, description },
+  ref,
+) {
+  return (
+    <DetailModal ref={ref}>
+      <div className="w-full h-full">
+        <p className="gradient-text font-bold text-2xl capitalize">{title}</p>
+        <p className="text-white/75 mt-3">{description}</p>
+      </div>
+    </DetailModal>
+  );
+});
 
 DetailCard.displayName = 'DetailCard';
 

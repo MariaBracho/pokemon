@@ -24,7 +24,7 @@ export default function ItemCard({ image, name, description, cost }: Props) {
     >
       <div className="w-full h-10 relative overflow-hidden rounded-lg flex">
         <Image
-          src="/images/backgroundItem.png"
+          src="/images/background-Item.png"
           alt="background"
           fill
           className="w-full  h-10 object-cover absolute"

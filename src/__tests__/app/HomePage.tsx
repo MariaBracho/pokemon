@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import TanstackQueryProvider from '@/providers/TanstackQueryProvider';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
+import TanstackQueryProvider from '@/providers/TanstackQueryProvider';
+
 import Home from '@/app/home/page';
 
 jest.mock('next/navigation', () => ({

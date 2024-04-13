@@ -1,25 +1,25 @@
 'use client';
 
-import Pagination from '@/components/table/Pagination';
+import { Suspense } from 'react';
 
-import { getMaxPage } from '@/utils/getMaxPage';
+import Pagination from '@/components/table/Pagination';
 
 import {
   useGetItems,
   useGetSingleItem,
 } from '@/features/items/queries/itemsQueries';
 
+import { getMaxPage } from '@/utils/getMaxPage';
+
+import type { SearchParams } from '@/models/searchParams';
+
 import ItemsCards from './ItemsCards';
 import SingleItemCard from './SingleItemCard';
-import { Suspense } from 'react';
 
 export default function ListOfItems({
   search,
   page,
-}: {
-  search: string;
-  page: string;
-}) {
+}: SearchParams['searchParams']) {
   const pageQuery = page ? Number(page) : 1;
 
   const { data: items, isLoading: isLoadingItems } = useGetItems({
