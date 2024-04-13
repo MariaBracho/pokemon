@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import DetailCard from '../DetailCard';
 import { useRef } from 'react';
-import { title } from 'process';
 
 interface Props {
   image: string;
@@ -27,9 +26,8 @@ export default function ItemCard({ image, name, description, cost }: Props) {
         <Image
           src="/images/backgroundItem.png"
           alt="background"
-          width={128}
-          height={40}
-          className="w-auto h-auto object-cover absolute"
+          fill
+          className="w-full  h-10 object-cover absolute"
         />
         <Image
           src={image}
@@ -45,7 +43,7 @@ export default function ItemCard({ image, name, description, cost }: Props) {
           <span className="text-white/75">Cost:</span> $ {cost}
         </p>
       </div>
-      <DetailCard description={description} title={title} ref={modalRef} />
+      <DetailCard description={description} title={name} ref={modalRef} />
     </div>
   );
 }

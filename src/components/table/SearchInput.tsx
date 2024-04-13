@@ -56,6 +56,7 @@ export default function SeacrhInput() {
         </label>
       </div>
       <button
+        data-testid="searchButton"
         type="submit"
         className="btn btn-primary btn-sm w-full md:max-w-48"
       >
