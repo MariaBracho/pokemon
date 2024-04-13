@@ -1,5 +1,6 @@
-import { NAVIGATION_ROUTER } from '@/constants/navigationRouter';
 import Link from 'next/link';
+
+import { NAVIGATION_ROUTER } from '@/constants/navigationRouter';
 
 interface Props {
   children: React.ReactNode;

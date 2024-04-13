@@ -1,7 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import Pagination from '@/components/table/Pagination';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { Suspense } from 'react';
+
+import { render, screen, fireEvent } from '@testing-library/react';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+
+import Pagination from '@/components/table/Pagination';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),

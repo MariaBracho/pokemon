@@ -1,9 +1,12 @@
-import type { Pokemon } from '@/models/pokemon';
-import SkeletonCard from '@/features/home/components/skeletons/SkeletonCard';
-import { generateArray } from '@/utils/generateArray';
-import PokemonCard from './PokemonCard';
 import cls from 'classnames';
 
+import SkeletonCard from '@/features/home/components/skeletons/SkeletonCard';
+
+import { generateArray } from '@/utils/generateArray';
+
+import type { Pokemon } from '@/models/pokemon';
+
+import PokemonCard from './PokemonCard';
 import style from './pokemonGalleryGrid.module.css';
 
 interface Props {

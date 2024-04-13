@@ -1,9 +1,11 @@
 import { useRef } from 'react';
 import Image from 'next/image';
-import type { PokemonType } from '@/models/pokemonType';
-import type { Pokemon } from '@/models/pokemon';
+
 import usePokemonHistoryStore from '@/features/home/stores/pokemonHistory';
 import DetailCard from '@/features/home/components/DetailCard';
+
+import type { PokemonType } from '@/models/pokemonType';
+import type { Pokemon } from '@/models/pokemon';
 
 export interface PokemonCardProps extends Pokemon {
   image: string;
@@ -19,6 +21,7 @@ export default function PokemonCard({
   types,
   hitPoints,
   baseExperience,
+  id,
   ...rest
 }: PokemonCardProps) {
   const modalRef = useRef<HTMLDialogElement | null>(null);
@@ -28,15 +31,16 @@ export default function PokemonCard({
   const openModal = () => {
     if (modalRef.current) {
       modalRef.current.showModal();
-      setPokemonHistory(rest.id);
+      setPokemonHistory(id);
     }
   };
 
-  const isActiveHistory = pokemonHistory.includes(rest.id);
+  const isActiveHistory = pokemonHistory.includes(id);
 
   return (
     <>
       <DetailCard
+        id={id}
         ref={modalRef}
         image={image}
         name={name}
@@ -55,7 +59,7 @@ export default function PokemonCard({
             className="hidden gap-1 absolute z-20 bottom-1 right-1 items-center data-[isactive=true]:flex"
           >
             <Image
-              src="/icons/eyeOpen.svg"
+              src="/icons/eye-open.svg"
               alt="eye icon"
               height={8}
               width={11}
@@ -93,13 +97,15 @@ export default function PokemonCard({
               </div>
             </div>
             <div className="relative z-10 flex-1 flex items-center h-full">
-              <Image
-                src={image}
-                alt={name}
-                height={112}
-                width={112}
-                className="w-28 h-28 object-cover rounded-lg -mt-8"
-              />
+              <div className="relative h-28 w-28 flex justify-center items-center -mt-8">
+                <Image
+                  src={image}
+                  alt={name}
+                  fill
+                  sizes="112px 112px"
+                  className=" h-auto w-auto object-cover "
+                />
+              </div>
             </div>
           </div>
         </div>
