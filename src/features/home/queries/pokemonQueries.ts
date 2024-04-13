@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
+
 import {
   getPokemonsWithDetails,
   getSinglePokemon,
 } from '@/features/home/services/pokemons';
+
 import type { PaginateProps } from '@/models/paginate';
 
 const POKEMONS_QUERY_KEY = 'POKEMONS_QUERY_KEY';

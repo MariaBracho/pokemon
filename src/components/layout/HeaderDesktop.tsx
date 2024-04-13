@@ -1,12 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import SeacrhInput from '@/components/table/SearchInput';
-import Menu from '@/components/layout/Menu';
-import SwapButton from '@/components/layout/SwapButton';
+
+import Link from 'next/link';
+
+import { Suspense } from 'react';
 
 import { useToggle } from 'usehooks-ts';
-import { Suspense } from 'react';
+
+import SeacrhInput from '@/components/table/SearchInput';
+import SwapButton from '@/components/layout/SwapButton';
+import Menu from '@/components/layout/Menu';
 
 export default function Header() {
   const [value, toggle] = useToggle();
@@ -15,14 +19,16 @@ export default function Header() {
     <Menu isOpen={value} onCloseModal={toggle}>
       <div className="min-h-20 w-full grid grid-cols-1 md:grid-cols-[1fr,2fr,1fr] items-center justify-center px-2 md:px-6">
         <div className="hidden md:block">
-          <Image
-            src="/images/pokemonLogo.png"
-            alt="logo"
-            width={96}
-            height={36}
-            priority
-            className="w-auto h-auto object-cover"
-          />
+          <Link href="/home">
+            <Image
+              src="/images/pokemon-logo.png"
+              alt="logo"
+              width={96}
+              height={36}
+              priority
+              className="w-auto h-auto object-cover"
+            />
+          </Link>
         </div>
         <div className="w-full h-full flex">
           <Suspense>

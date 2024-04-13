@@ -14,7 +14,7 @@ export default function NotResultsFound({
     <div className="w-full flex flex-col justify-center items-center mt-20">
       <div className="text-white text-center text-base grid place-content-center max-w-[450px] w-full place-items-center">
         <Image
-          src="/images/pokeBall.png"
+          src="/images/poke-Ball.png"
           alt="pokemon ball"
           width={212}
           height={106}
