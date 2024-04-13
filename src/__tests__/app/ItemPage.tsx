@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
 import TanstackQueryProvider from '@/providers/TanstackQueryProvider';
+import { render, screen } from '@testing-library/react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Items from '@/app/items/page';
 
@@ -11,20 +11,20 @@ jest.mock('next/navigation', () => ({
 
 it('render home', () => {
   (useRouter as jest.Mock).mockReturnValue({
-    route: '/items',
-    pathname: '/items',
+    route: '/home',
+    pathname: '/home',
     query: {
-      search: 'test',
+      search: 'pikachu',
       page: '1',
     },
     replace: jest.fn(),
   });
 
   (useSearchParams as jest.Mock).mockReturnValue(
-    new URLSearchParams({ search: 'test', page: '1' }),
+    new URLSearchParams({ search: 'pikachu', page: '1' }),
   );
 
-  (usePathname as jest.Mock).mockReturnValue('/items');
+  (usePathname as jest.Mock).mockReturnValue('/home');
 
   render(
     <TanstackQueryProvider>
